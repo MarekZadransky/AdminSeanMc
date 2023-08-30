@@ -19,7 +19,6 @@
     #>
 
 ##
-#Requires -modules azuread
 function Invoke-PrereqCheck {
     [CmdletBinding()]
     Param (
@@ -120,7 +119,7 @@ function New-AadApplicationCertificate {
     }
     Return $cert.Thumbprint
 }
-
+Invoke-PrereqCheck
 ##Declare Variables
 ##Monitors connection attempt
 $connected = $false
