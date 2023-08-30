@@ -3,7 +3,7 @@ Param(
     [Parameter(Mandatory = $false)]
     [string]$Path = 'c:\Temp\TenantMigrationAssessment\',
     [Parameter(Mandatory = $false)]
-    [hashtable]$DownloadFiles = @{  'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/Prepare-TenantAssessment.ps1' = '1D44A9BD17A1F5D049A618B27B7449501B0215B6ECDD143FD5FD0C82E6AE9FFA';
+    [hashtable]$DownloadFiles = @{  'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/Prepare-TenantAssessment.ps1' = '70FD609555FB8F63CCA2BA613D57CCFE6BB8A3AF4F71D2DD1C1BC19FF7D7364A';
                                     'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/Perform-TenantAssessment.ps1' = '70B1D7F468937C304449641ABFA4E1AF1988A69E6EE7CF15CD2892B0D0268F43';
                                     'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/TenantAssessment-Template.xlsx' = '9D992BBF6142EF4095A34FCCA6CACA47E10099528F7977C68E75DBB03FDA5614'},
     [Parameter(Mandatory = $false)]
