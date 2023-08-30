@@ -26,18 +26,20 @@
 
 
     #>
-#Requires -modules msal.ps, importexcel, exchangeonlinemanagement
+#Requires -modules MSAL.PS, ImportExcel, ExchangeOnlineManagement
 Param(
-    [parameter(Mandatory = $true)]
+    [parameter(Mandatory = $false)]
+    $configFile = '.\AppInfo.json',
+    [parameter(Mandatory = $false)]
     $clientId,
-    [parameter(Mandatory = $true)]
+    [parameter(Mandatory = $false)]
     $tenantId,
-    [parameter(Mandatory = $true)]
+    [parameter(Mandatory = $false)]
     $certificateThumbprint,
     [parameter(Mandatory = $false)]
-    [switch]$IncludeGroupMembership = $false,
+    [switch]$IncludeGroupMembership = $true,
     [parameter(Mandatory = $false)]
-    [switch]$IncludeMailboxPermissions = $false
+    [switch]$IncludeMailboxPermissions = $true
 
 )
 
@@ -71,9 +73,7 @@ function RunQueryandEnumerateResults {
     }
 
     ##Return completed results
-    return $ResultsValue
-
-    
+    return $ResultsValue    
 }
 
 function UpdateProgress {
@@ -96,14 +96,21 @@ UpdateProgress
 $ProgressTracker++
 ##Import Modules
 Try {
-    Import-Module msal.ps
+    Import-Module MSAL.PS
     import-module ExchangeOnlineManagement
-    import-module importexcel
+    import-module ImportExcel
 }
 catch {
     clear
     write-host "Could not import modules, make sure you have the following modules available`nMSAL.PS`nExchangeOnlineManagement`n`nThese modules can be installed by running the following commands:`nInstall-Module MSAL.PS`n`nInstall-Module ExchangeOnlineManagement" -ForegroundColor red
     exit
+}
+
+if ($configFile) {
+    $Config = Get-Content $configFile | ConvertFrom-Json
+    $tenantId = $Config.TenantId
+    $clientId = $Config.ClientId
+    $certificateThumbprint = $Config.CertificateThumbprint
 }
 
 $ProgressStatus = "Obtaining access token..."
