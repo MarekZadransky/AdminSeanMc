@@ -3,11 +3,11 @@ Param(
     [Parameter(Mandatory = $false)]
     [string]$Path = 'c:\Tempus\Tenant Migration Assessment\',
     [Parameter(Mandatory = $false)]
-    [hashtable]$DownloadFiles = @{  'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/Prepare-TenanatAssessment.ps1' = '25CBDEDA673BCB7F48FD07DD542F433CF8C37E77F1797EC4F49B9FD34569AE3A';
+    [hashtable]$DownloadFiles = @{  'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/Prepare-TenantAssessment.ps1' = 'C5A74092829E17333405625A2BA6592663F97F0533819303B1CC07D2B223161E';
                                     'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/Perform-TenantAssessment.ps1' = 'C197FB26286C5C4479B4460D9E5F3575E52A2CF37F79F6560E47ED229A3A7FE7';
                                     'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/TenantAssessment-Template.xlsx' = 'AE520178ED4FD54FBA79F9010C480C066388F46E22DBDE1B508B260DB0B1EB79'},
     [Parameter(Mandatory = $false)]
-    [switch]$WriteFileHashes = $true
+    [switch]$WriteFileHashes = $false
 )
 Begin {
     if (-not(Test-Path $Path)) {
