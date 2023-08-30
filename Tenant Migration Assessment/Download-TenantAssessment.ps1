@@ -3,7 +3,7 @@ Param(
     [Parameter(Mandatory = $false)]
     [string]$Path = 'c:\Temp\TenantMigrationAssessment\',
     [Parameter(Mandatory = $false)]
-    [hashtable]$DownloadFiles = @{  'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/Prepare-TenantAssessment.ps1' = '70FD609555FB8F63CCA2BA613D57CCFE6BB8A3AF4F71D2DD1C1BC19FF7D7364A';
+    [hashtable]$DownloadFiles = @{  'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/Prepare-TenantAssessment.ps1' = 'EA65A7DBC5A18F2943ABB31B70D7B0F7D936127F9335D7C643D1E8176C6E9B44';
                                     'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/Perform-TenantAssessment.ps1' = '70B1D7F468937C304449641ABFA4E1AF1988A69E6EE7CF15CD2892B0D0268F43';
                                     'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/TenantAssessment-Template.xlsx' = '9D992BBF6142EF4095A34FCCA6CACA47E10099528F7977C68E75DBB03FDA5614'},
     [Parameter(Mandatory = $false)]
@@ -40,7 +40,7 @@ Process {
                     Unblock-File $TargetFile
                 }else{
                     Write-Host "File Hash invalid, remove file" -ForegroundColor Red
-                    #Remove-Item $TargetFile -Force
+                    Remove-Item $TargetFile -Force
                 }  
             }
         }
