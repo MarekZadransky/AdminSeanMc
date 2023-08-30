@@ -1,7 +1,7 @@
 [CmdletBinding(SupportsShouldProcess=$true)]
 Param(
     [Parameter(Mandatory = $false)]
-    [string]$Path = 'c:\Tempus\Tenant Migration Assessment\',
+    [string]$Path = 'c:\Temp\TenantMigrationAssessment\',
     [Parameter(Mandatory = $false)]
     [hashtable]$DownloadFiles = @{  'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/Prepare-TenantAssessment.ps1' = 'C5A74092829E17333405625A2BA6592663F97F0533819303B1CC07D2B223161E';
                                     'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/Perform-TenantAssessment.ps1' = 'C197FB26286C5C4479B4460D9E5F3575E52A2CF37F79F6560E47ED229A3A7FE7';
