@@ -3,9 +3,9 @@ Param(
     [Parameter(Mandatory = $false)]
     [string]$Path = 'c:\Temp\TenantMigrationAssessment\',
     [Parameter(Mandatory = $false)]
-    [hashtable]$DownloadFiles = @{  'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/Prepare-TenantAssessment.ps1' = 'C5A74092829E17333405625A2BA6592663F97F0533819303B1CC07D2B223161E';
-                                    'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/Perform-TenantAssessment.ps1' = 'C197FB26286C5C4479B4460D9E5F3575E52A2CF37F79F6560E47ED229A3A7FE7';
-                                    'https://github.com/MarekZadransky/AdminSeanMc/blob/master/Tenant%20Migration%20Assessment/TenantAssessment-Template.xlsx' = 'AE520178ED4FD54FBA79F9010C480C066388F46E22DBDE1B508B260DB0B1EB79'},
+    [hashtable]$DownloadFiles = @{  'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/Prepare-TenantAssessment.ps1' = '1D44A9BD17A1F5D049A618B27B7449501B0215B6ECDD143FD5FD0C82E6AE9FFA';
+                                    'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/Perform-TenantAssessment.ps1' = '70B1D7F468937C304449641ABFA4E1AF1988A69E6EE7CF15CD2892B0D0268F43';
+                                    'https://raw.githubusercontent.com/MarekZadransky/AdminSeanMc/master/Tenant%20Migration%20Assessment/TenantAssessment-Template.xlsx' = '9D992BBF6142EF4095A34FCCA6CACA47E10099528F7977C68E75DBB03FDA5614'},
     [Parameter(Mandatory = $false)]
     [switch]$WriteFileHashes = $false
 )
@@ -40,7 +40,7 @@ Process {
                     Unblock-File $TargetFile
                 }else{
                     Write-Host "File Hash invalid, remove file" -ForegroundColor Red
-                    Remove-Item $TargetFile -Force
+                    #Remove-Item $TargetFile -Force
                 }  
             }
         }
